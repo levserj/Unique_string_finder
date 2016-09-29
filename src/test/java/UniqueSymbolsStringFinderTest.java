@@ -22,5 +22,22 @@ public class UniqueSymbolsStringFinderTest {
     @Test
     public void givenStringResultsInCorrectOutputString(){
         assertThat(usf.findStringOfUniqueSymbols("abbcdabc"), equalTo("bcda"));
+        assertThat(usf.findStringOfUniqueSymbols("cbacdcbc"), equalTo("bacd"));
+    }
+
+    @Test
+    public void stringWithoutSubStrOfUniqueSymbolsResultsAsExpected(){
+        assertThat(usf.findStringOfUniqueSymbols("aabbc"), equalTo("No such substring"));
+        assertThat(usf.findStringOfUniqueSymbols("abbcdabcx"), equalTo("No such substring"));
+    }
+
+    @Test
+    public void emptyStringProcessedCorrectly(){
+        assertThat(usf.findStringOfUniqueSymbols(""), equalTo(""));
+    }
+
+    @Test
+    public void stringConsistOfSameOneSymbolProcessedCorrectly(){
+        assertThat(usf.findStringOfUniqueSymbols("aaaaaaaaa"), equalTo("a"));
     }
 }

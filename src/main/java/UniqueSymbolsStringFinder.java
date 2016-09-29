@@ -3,6 +3,8 @@ import java.util.LinkedHashSet;
 
 /**
  * Created by Levchynskyi Serhii on 28.09.16.
+ *
+ *
  */
 public class UniqueSymbolsStringFinder {
 
@@ -10,6 +12,9 @@ public class UniqueSymbolsStringFinder {
     private HashSet<Character> backupSet = new HashSet<Character>();
 
     public String findStringOfUniqueSymbols(String inputStr){
+        if (inputStr.length()==0){
+            return "";
+        }
         char [] chars = inputStr.toCharArray();
         for (char c : chars){
             set.add(c);
@@ -24,9 +29,7 @@ public class UniqueSymbolsStringFinder {
                 if (backupSet.size()==0){
                     return inputStr.substring(i, i+set.size());
                 }
-
             }
-
             backupSet.clear();
         }
         return "No such substring";
