@@ -23,12 +23,13 @@ public class UniqueSymbolsStringFinderTest {
         assertThat(usf.findStringOfUniqueSymbols("abbcdabc"), equalTo("bcda"));
         assertThat(usf.findStringOfUniqueSymbols("cbacdcbc"), equalTo("bacd"));
         assertThat(usf.findStringOfUniqueSymbols("aaabcaaa"), equalTo("abc"));
+        assertThat(usf.findStringOfUniqueSymbols("abbcdabcx"), equalTo("dabcx"));
     }
 
     @Test
     public void stringWithoutSubStrOfUniqueSymbolsResultsAsExpected() {
         assertThat(usf.findStringOfUniqueSymbols("aabbc"), equalTo("No such substring"));
-        assertThat(usf.findStringOfUniqueSymbols("abbcdabcx"), equalTo("No such substring"));
+        assertThat(usf.findStringOfUniqueSymbols("yabbcdabcx"), equalTo("No such substring"));
     }
 
     @Test

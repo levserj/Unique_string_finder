@@ -32,7 +32,7 @@ public class UniqueSymbolsStringFinder {
         }
         int setSize = set.size();
         // Loop to go through input string
-        for (int i = 0; i < chars.length - setSize; i++) {
+        for (int i = 0; i < chars.length - setSize + 1; i++) {
             // Making a copy of the set
             backupSet.clear();
             backupSet.addAll(set);
